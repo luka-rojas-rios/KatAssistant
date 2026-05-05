@@ -4,6 +4,7 @@
 credentials/gmail_token.json
 credentials/gmail_credentials.json
 .env
+secrets/
 
 # --- Runtime state ---
 # Generated at runtime. Each machine maintains its own state.
