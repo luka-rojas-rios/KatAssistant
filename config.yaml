@@ -1,0 +1,91 @@
+agent:
+  name: "KatAssistant"
+  run_hour: 9
+  timezone: "Europe/Madrid"
+  log_level: "INFO"
+
+accounts:
+  hub:
+    email: "kat@geniuspeople.es"
+    type: "gmail"
+    # EXPANSION POINT: add further accounts here in v2
+    # - email: "hola@aainactive.com"
+    #   type: "imap"
+    #   host: "mail.piensasolutions.com"
+    #   port: 993
+
+output:
+  html_report:
+    enabled: true
+    auto_open: true
+    save_path: "reports/"
+    keep_last_n: 7
+
+  email_summary:
+    enabled: true
+    recipients:
+      - "kat@geniuspeople.es"
+      - "kat.rios@hotmail.com"
+    sender: "kat@geniuspeople.es"
+
+vip_senders:
+  emails:
+    - "lorena@geniuspeople.es"
+    # add client emails here as needed
+  domains:
+    - "notaria.es"
+    # add trusted domains here as needed
+
+urgency_keywords:
+  - "URGENTE"
+  - "URGENT"
+  - "ASAP"
+  - "HOY"
+  - "TODAY"
+  - "PENDIENTE"
+  - "LLAMADA"
+  - "DEADLINE"
+  - "VENCE"
+
+vip_topics:
+  - "factura"
+  - "invoice"
+  - "contrato"
+  - "contract"
+  - "pago"
+  - "payment"
+  - "proyecto nuevo"
+  - "franquiciado"
+
+labels:
+  urgent: "URGENTE"
+  important: "IMPORTANTE"
+  to_review: "REVISAR"
+  newsletter: "NEWSLETTERS"
+  notification: "NOTIFICACIONES"
+  offers: "OFERTAS"
+
+brand_routing:
+  - match:
+      - "aainactive.com"
+      - "aainworld@gmail.com"
+      - "aainactive@gmail.com"
+    label: "AAIN"
+  - match:
+      - "kuadrata.com"
+      - "kuadratastudio@gmail.com"
+    label: "KUADRATA"
+  - match:
+      - "geniuspeople.es"
+    label: "GENIUS_PEOPLE"
+  - match:
+      - "kateriordesign.com"
+    label: "KUADRATA"
+    # EXPANSION POINT: remove this routing once kateriordesign.com is fully migrated
+
+claude:
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 1000
+  batch_size: 20
+  classify_body: false
+  # EXPANSION POINT: set classify_body to true to include full message body for ambiguous emails

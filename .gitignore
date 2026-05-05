@@ -1,0 +1,50 @@
+# --- Credentials ---
+# These files contain OAuth tokens and API secrets.
+# They must never be committed under any circumstances.
+credentials/gmail_token.json
+credentials/gmail_credentials.json
+.env
+secrets/
+
+# --- Runtime state ---
+# Generated at runtime. Each machine maintains its own state.
+state.json
+
+# --- Logs ---
+logs/
+
+# --- Generated reports ---
+# HTML reports are produced at runtime and are not source artifacts.
+reports/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+*.so
+
+# --- Virtual environment ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- Linux (Pop OS) ---
+.directory
+*~
+
+# --- Editor artifacts ---
+.vscode/
+.idea/
+*.swp
+*.swo
